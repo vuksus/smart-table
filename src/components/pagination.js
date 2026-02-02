@@ -2,7 +2,7 @@ import { getPages } from "../lib/utils.js";
 
 export const initPagination = (
   { pages, fromRow, toRow, totalRows },
-  createPage
+  createPage,
 ) => {
   // @todo: #2.3 — подготовить шаблон кнопки для страницы и очистить контейнер
   const pageTemplate = pages.firstElementChild.cloneNode(true); // в качестве шаблона берём первый элемент из контейнера со страницами
@@ -44,7 +44,7 @@ export const initPagination = (
         // перебираем их и создаём для них кнопку
         const el = pageTemplate.cloneNode(true); // клонируем шаблон, который запомнили ранее
         return createPage(el, pageNumber, pageNumber === page); // вызываем колбэк из настроек, чтобы заполнить кнопку данными
-      })
+      }),
     );
     // @todo: #2.5 — обновить статус пагинации
     fromRow.textContent = (page - 1) * limit + 1; // С какой строки выводим

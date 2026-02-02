@@ -54,7 +54,7 @@ const sampleTable = initTable(
     before: ["search", "header", "filter"],
     after: ["pagination"],
   },
-  render
+  render,
 );
 
 // @todo: инициализация
@@ -68,7 +68,7 @@ const { applyPagination, updatePagination } = initPagination(
     input.checked = isCurrent;
     label.textContent = page;
     return el;
-  }
+  },
 );
 
 const applySorting = initSorting([
@@ -78,7 +78,7 @@ const applySorting = initSorting([
 ]);
 
 const { applyFiltering, updateIndexes } = initFiltering(
-  sampleTable.filter.elements
+  sampleTable.filter.elements,
 );
 
 const applySearching = initSearching("search");
